@@ -13,5 +13,7 @@ Fuctionality:
 - character
     - run right/left (auto run?) using arrow keys
     - jump using space bar
+        -jumping over gaps
+        -jumping over/on enemies
 - collect points
 
