@@ -1,29 +1,24 @@
 var character = document.getElementById("character");
+var block = document.getElementById("block");
+var counter = 0;
 document.addEventListener("click",jump);
 function jump(){
     if(character.classList == "animate"){return;}
     character.classList.add("animate");
-    setTimeout(removeJump,300); 
-};
-
-function removeJump(){
-    character.classList.remove("animate");
+    setTimeout(function(){
+        character.classList.remove("animate");
+    },300);
 }
-
-var block = document.getElementById("block");
-function checkDead(){
+var checkDead = setInterval(function() {
     let characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     let blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     if(blockLeft<20 && blockLeft>-20 && characterTop>=130){
-        alert("Game over");
+        block.style.animation = "none";
+        alert("Game Over. score: "+Math.floor(score/100));
+        counter=0;
+        block.style.animation = "block 1s infinite linear";
+    }else{
+        counter++;
+        document.getElementById("scoreSpan").innerHTML = Math.floor(counter/100);
     }
-}
-
-setInterval(checkDead, 20);
-
-var score = 0;
-function drawScore() {
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
-    ctx.fillText("Score: "+score, 8, 20);
-}
+    }, 10);
