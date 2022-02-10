@@ -51,10 +51,6 @@ p{
 #over{
     font-family: 'Courier New', Courier, monospace;
     font-size: 30px;
-    width: 300px;
-    height: 100px;
     color: #FF6663;
-    border: 1px solid black;
-    background-color: #00272B;
-    margin: auto;
+    text-align: center;
 }
