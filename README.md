@@ -6,4 +6,8 @@ Use your mouse to click to jump over the square. Everytime you jump over the squ
 
 Code:
 I created variables for the neon red block, the yellow character, and the score. Used an event listener in order for the click of the mouse to coorelate to a jump. I used a keyframes animation in my styles.css for the jump to go up 50px and back down. Then I created another function that will remove jump when the animation ends. 
+The score was the hardest to figure out. I had to figure out how close the square would get to the character and found out that if it is less than 120px, as you clear the squre, to add to the score. The check dead allows for the game to end if you hit the square. This reads by if the pixels merge together, then the game ends. The game over will also show when the game ends. 
+
+Bugs:
+The game will automatically start, when it would be better if there was a click to start the game. This also makes the game really fast and there is not a hard reset.
 
